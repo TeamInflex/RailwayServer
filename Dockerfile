@@ -13,7 +13,7 @@ RUN mkdir /run/sshd
 RUN echo '/usr/sbin/sshd -D' >>/inflex.sh
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
-RUN echo TeamInflex:TeamInflex@0987654321|chpasswd
+RUN echo root:inflex|chpasswd
 RUN service ssh start
 RUN chmod 755 /inflex.sh
 EXPOSE 80 8888 8080 443 5130 5131 5132 5133 5134 5135 3306
